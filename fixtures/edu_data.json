@@ -1,0 +1,22 @@
+[
+  {
+    "model": "edu.course",
+    "pk": 2,
+    "fields": {
+      "title": "Как фотографировать красиво?",
+      "preview": "course_previews/sun.jpg",
+      "description": "В этом курсе вы научитесь фотографировать природу как профессионал."
+    }
+  },
+  {
+    "model": "edu.lesson",
+    "pk": 2,
+    "fields": {
+      "title": "Основы. Структура \"удачного\" кадра.",
+      "preview": "lesson_previews/sun.jpg",
+      "description": "В этом уроке вы узнаете основы фотосъемки.",
+      "video_link": "https://youtu.be/s8IfCO8VWC8?si=TiTC9Cjtu84kZvoI",
+      "course": 2
+    }
+  }
+]
