@@ -15,7 +15,6 @@
       "phone_number": null,
       "city": null,
       "avatar": "",
-      "token": null,
       "groups": [],
       "user_permissions": []
     }
@@ -25,10 +24,10 @@
     "pk": 1,
     "fields": {
       "user": 1,
-      "payment_date": "2025-05-05 00:05:43.467144+03:00",
+      "payment_date": "2025-05-04T21:05:43.467Z",
       "paid_course": 2,
       "paid_lesson": null,
-      "payment_amount": 10000,
+      "payment_amount": 10000.0,
       "payment_method": "card"
     }
   },
@@ -37,10 +36,10 @@
     "pk": 2,
     "fields": {
       "user": 1,
-      "payment_date": "2025-05-05 00:19:55.974343+03:00",
+      "payment_date": "2025-05-04T21:19:55.974Z",
       "paid_course": null,
       "paid_lesson": 2,
-      "payment_amount": 500,
+      "payment_amount": 500.0,
       "payment_method": "card"
     }
   },
@@ -49,10 +48,10 @@
     "pk": 3,
     "fields": {
       "user": 1,
-      "payment_date": "2025-05-05 00:20:14.265848+03:00",
+      "payment_date": "2025-05-04T21:20:14.265Z",
       "paid_course": 2,
       "paid_lesson": null,
-      "payment_amount": 10000,
+      "payment_amount": 10000.0,
       "payment_method": "cash"
     }
   }
