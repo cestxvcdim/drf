@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'django_filters',
+    'drf_yasg',
+    'corsheaders',
 
     'users',
     'edu',
@@ -58,7 +60,22 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "https://read-only.example.com",
+    "https://read-and-write.example.com",
+    "https://docs.stripe.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://read-and-write.example.com",
+]
+
 
 ROOT_URLCONF = 'config.urls'
 
@@ -155,3 +172,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTH_USER_MODEL = 'users.User'
+
+CSU_EMAIL = os.getenv('CSU_EMAIL')
+CSU_FIRST_NAME = os.getenv('CSU_FIRST_NAME')
+CSU_LAST_NAME = os.getenv('CSU_LAST_NAME')
+CSU_PASSWORD = os.getenv('CSU_PASSWORD')
+
+STRIPE_API_KEY = os.getenv('STRIPE_API_KEY')
