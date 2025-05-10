@@ -8,7 +8,7 @@ from edu.apps import EduConfig
 app_name = EduConfig.name
 
 router = DefaultRouter()
-router.register('courses', CourseViewSet)
+router.register(r'courses', CourseViewSet)
 
 urlpatterns = [
     path('lessons/', LessonListAPIView.as_view(), name='lesson-list'),

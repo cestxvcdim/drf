@@ -5,6 +5,7 @@ from edu.models import Course, Lesson
 from edu.paginators import LessonPaginator, CoursePaginator
 from edu.permissions import IsOwnerOrStaff
 from edu.serializers import CourseSerializer, LessonSerializer, CourseDetailSerializer
+from edu.tasks import send_course_update_notification
 
 
 class CourseViewSet(ModelViewSet):
@@ -42,6 +43,10 @@ class LessonUpdateAPIView(UpdateAPIView):
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     permission_classes = [IsOwnerOrStaff]
+
+    def perform_update(self, serializer):
+        instance = serializer.save()
+        send_course_update_notification.delay(instance.course.id)
 
 
 class LessonDestroyAPIView(DestroyAPIView):
